@@ -1,0 +1,26 @@
+{
+  "name": "Block Facebook Emojis",
+  "short_name": "BlockFacebookEmojis",
+  "version": "1.0.0.3",
+  "manifest_version": 2,
+  "description": "Hides emoji likes to a post on Facebook and shows traditional likes instead of emojis.",
+  "background": {
+    "scripts": ["jquery.js", "string.extensions.js", "content.js", "app.js"]
+  },
+  "icons": {
+    "128": "/media/icons/app-128.png"
+  },
+  "permissions": [
+    "tabs",
+    "webRequest", 
+    "*://www.facebook.com/*"
+  ], 
+  "content_scripts": [
+  {
+    "all_frames": true,
+    "matches": ["*://www.facebook.com/*"],
+    "js": ["jquery.js", "content.js"]
+  }]
+}
+
+
